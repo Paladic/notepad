@@ -31,6 +31,7 @@ namespace notepad
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fontsSetting));
             this.ExampleFont = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.FontSize = new System.Windows.Forms.ComboBox();
@@ -40,13 +41,14 @@ namespace notepad
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ExampleFont
             // 
             this.ExampleFont.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ExampleFont.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.ExampleFont.Location = new System.Drawing.Point(168, 140);
+            this.ExampleFont.Location = new System.Drawing.Point(179, 69);
             this.ExampleFont.Name = "ExampleFont";
             this.ExampleFont.Size = new System.Drawing.Size(209, 109);
             this.ExampleFont.TabIndex = 1;
@@ -56,7 +58,7 @@ namespace notepad
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label1.Location = new System.Drawing.Point(179, 128);
+            this.label1.Location = new System.Drawing.Point(190, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 26);
             this.label1.TabIndex = 2;
@@ -118,7 +120,7 @@ namespace notepad
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(168, 264);
+            this.button1.Location = new System.Drawing.Point(179, 190);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 33);
             this.button1.TabIndex = 12;
@@ -126,11 +128,22 @@ namespace notepad
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(285, 191);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(92, 33);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Отменить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // fontsSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 310);
+            this.ClientSize = new System.Drawing.Size(413, 236);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -140,10 +153,13 @@ namespace notepad
             this.Controls.Add(this.FontSize);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ExampleFont);
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "fontsSetting";
             this.Text = "Шрифт";
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button button2;
 
         private System.Windows.Forms.ComboBox FontName;
 

@@ -89,5 +89,13 @@ namespace notepad
         {
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FontSize.SelectedItem = FontSize.Items[0];
+            FontStyle.SelectedItem = FontStyle.Items[0];
+            FontName.SelectedItem = FontName.Items[0];
+            this.Hide();
+        }
     }
 }
