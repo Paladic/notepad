@@ -52,6 +52,7 @@ namespace notepad
                 textBox1.Text = "";
                 Filename = "";
                 UpdateTextWithTitle();
+                IsFileChanged = false;
             }
             else MessageBox.Show("Создание нового файла отменено", "Прерывание");
         }
@@ -140,18 +141,23 @@ namespace notepad
         }
         private void SaveUnSavedFile() // сохранение несхораненого файла
         {
-            var exitMessage = MessageBox.Show("Вы хотите сохранить результат?", "Предупреждение", MessageBoxButtons.YesNoCancel);
-            switch (exitMessage)
+            if (IsFileChanged)
             {
-                case DialogResult.Yes:
-                    SaveFile(Filename);
-                    break;
-                case DialogResult.No:
-                    IsFileChanged = false;
-                    break;
-                case DialogResult.Cancel:
-                    CancelFile = true;
-                    break;
+                var exitMessage = MessageBox.Show("Вы хотите сохранить результат?", "Предупреждение",
+                    MessageBoxButtons.YesNoCancel);
+                switch (exitMessage)
+                {
+                    case DialogResult.Yes:
+                        SaveFile(Filename);
+                        IsFileChanged = false;
+                        break;
+                    case DialogResult.No:
+                        IsFileChanged = false;
+                        break;
+                    case DialogResult.Cancel:
+                        CancelFile = true;
+                        break;
+                }
             }
         }
 
